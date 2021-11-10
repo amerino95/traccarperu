@@ -1,0 +1,50 @@
+.clasificacion{
+    direction: rtl;/* right to left */
+    unicode-bidi: bidi-override;/* bidi de bidireccional */
+}
+La propiedad direction: rtl; cambia la dirección de escritura  de derecha a izquierda ( right to left ). La otra propiedad unicode-bidi ( bidi de bidireccional ) se utiliza junto con la propiedad direction para cambiar  la dirección del texto. Normalmente se utilizan para insertar fragmentos de texto en idiomas de escritura derecha a izquierda, pero nos viene bien en este caso. Ahorra lo tenemos fácil.
+
+1. Al pasar por encima las etiquetas <label> ( o sea: las estrellas ) cambian de color.
+
+label:hover{color:orange;}
+2. También cambian de color todas las etiquetas <label> precedidas ( ~ ) por aquella <label> que tiene el ratón encima ( hover ).
+
+label:hover ~ label{color:orange;}
+3. Al marcar el botón de radio ( radio:checked ) todas las etiquetas <label> que le preceden ( ~ ) se vuelven color naranja
+
+input[type = "radio"]:checked ~ label{color:orange;}
+#form {
+width: 250px;
+margin: 0 auto;
+height: 50px;
+}
+
+#form p {
+text-align: center;
+}
+
+#form label {
+font-size: 20px;
+}
+
+input[type="radio"] {
+display: none;
+}
+
+label {
+color: grey;
+}
+
+.clasificacion {
+direction: rtl;
+unicode-bidi: bidi-override;
+}
+
+label:hover,
+label:hover ~ label {
+color: orange;
+}
+
+input[type="radio"]:checked ~ label {
+color: orange;
+}
